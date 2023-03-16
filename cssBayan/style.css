@@ -1,0 +1,11 @@
+body {
+    font-family: "Comic Sans MS";
+    src: url("./fonts/Comic\ Sans\ MS.ttf");
+    font-size: 1.875rem;
+    background-color: #fff;
+}
+
+header {
+    height: var(--h_header);
+    display: flex;
+}
