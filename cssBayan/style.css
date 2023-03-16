@@ -1,11 +1,116 @@
 body {
     font-family: "Comic Sans MS";
-    src: url("./fonts/Comic\ Sans\ MS.ttf");
-    font-size: 1.875rem;
-    background-color: #fff;
+    src: url('./fonts/Comic\ Sans\ MS.ttf');
+    color: #413d51;
+    background-color: #dbdbdb;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
 }
 
 header {
     height: var(--h_header);
     display: flex;
 }
+
+.accordion-content {
+    padding: 6px 20px;
+    transition: transform 0.3s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transform:scaleY(0);
+    transform-origin: top;
+    text-align: center;
+}
+
+.accordion-content > img {
+    max-width: 100%;
+  }
+
+.accordion-title {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 2px solid #413d51;
+    transition: background 0.1s;
+  }
+
+  .accordion-title:active {
+    background: #231a24 !important;
+  }
+
+  .accordion-title:hover ~ .accordion-content {
+    opacity: 1;
+    height: 100%;
+    padding: 16px 20px;
+    transform:scaleY(1);
+  }
+
+
+  .cross {
+    width: 20px;
+    height: 20px;
+    background-image: url('./images/bp.svg');
+    background-size: contain;
+    transition: 0.4s;
+  }
+
+  .accordion-item__input {
+    display: none;
+  }
+
+  .accordion-item__input ~ .accordion-content {
+    opacity: 1;
+    height: 100%;
+    padding: 16px 20px;
+    transform:scaleY(1);
+  }
+
+  .accordion-item__input:not(:checked) ~ .accordion-content {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .accordion-item__input:checked + .accordion__label .cross {
+    transform: rotate(45deg);
+  }
+  
+  @media (min-width: 820px) {
+    .accordion {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .accordion {
+      font-size: 2rem;
+      max-width: 1500px;
+      margin: auto;
+    }
+    .accordion h1 {
+      font-size: 3rem;
+    }
+    .cross {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (hover: hover) {
+    .accordion-title:hover {
+      background: #413d51;
+      color: #dbdbdb;
+    }
+    .accordion-title:hover > .cross {
+      background-image: url('./images/wp.svg');
+    }
+  }
