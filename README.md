@@ -1,1 +1,1 @@
-https://SnowT91.github.io/cssBayan/
+https://SnowT91.github.io/cssBayan/cssBayan/
